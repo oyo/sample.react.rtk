@@ -1,0 +1,13 @@
+.post {
+    display: inline-block;
+    text-wrap: wrap;
+    border: 1px solid lightgray;
+    padding: 20px;
+    margin: 10px;
+    width: 240px;
+    cursor: pointer;
+}
+
+.post:hover {
+    background-color: #eeeeee;
+}
