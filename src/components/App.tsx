@@ -3,10 +3,13 @@ import { type User, useFetchUsersQuery } from 'features/api/users'
 import ItemList from 'shared/ItemList'
 import UserItem from './User'
 import PostItem from './Post'
+import PokemonItem from './Pokemon'
 import Notify from './Notify'
+import { PokemonListItem, useFetchPokemonsQuery } from 'features/api/pokemon'
 
 const renderUser = (item: User) => <UserItem item={item} />
 const renderPost = (item: Post) => <PostItem item={item} />
+const renderPokemon = (item: PokemonListItem) => <PokemonItem item={item} />
 
 const App = () => {
   return (
@@ -16,6 +19,12 @@ const App = () => {
       <ItemList<User>
         fetchItems={useFetchUsersQuery}
         renderItem={renderUser}
+      />
+
+      <h3>Pokemon</h3>
+      <ItemList<PokemonListItem>
+        fetchItems={useFetchPokemonsQuery}
+        renderItem={renderPokemon}
       />
 
       <h3>Posts</h3>
