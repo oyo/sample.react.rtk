@@ -12,6 +12,7 @@ export type NotifyDataItem = object | string | number | boolean
 export type NotifyData = NotifyDataItem | Array<NotifyDataItem>
 
 export type Notify = {
+  time: Date
   severity: SeverityType
   message: string
   data?: NotifyData

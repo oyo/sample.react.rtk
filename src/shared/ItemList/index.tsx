@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid'
 import './style.scss'
 
 const defaultRender = function<Item>(item: Item) {
@@ -21,7 +22,7 @@ const ItemList = function <Item>({
   return (
     <ul>
       {
-        data?.map((item: Item) => <li>{renderItem(item)}</li>)
+        data?.map((item: Item) => <li key={uuid()}>{renderItem(item)}</li>)
       }
     </ul>
   )

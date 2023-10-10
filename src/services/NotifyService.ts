@@ -5,7 +5,7 @@ const NOTIFY_TIME = 7000
 
 const NotifyService = {
   notify: (severity: SeverityType, message: string) => {
-    store.dispatch(enq({ severity, message }))
+    store.dispatch(enq({ time: new Date(), severity, message }))
     setTimeout(() => store.dispatch(deq()), NOTIFY_TIME)
   },
   success: (message: string) => NotifyService.notify(SeverityType.SUCCESS, message),
